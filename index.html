@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - JJ Cafe</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="beans.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Kontainer Login -->
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="Masukkan username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Masukkan password">
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Menangani event submit pada form login
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Menghindari pengiriman form secara default
+
+            // Ambil nilai input username dan password
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Cek apakah username dan password sesuai (hanya untuk contoh)
+            if (username === "javajoe" && password === "jj2024") {
+                // Jika berhasil login, arahkan ke halaman dashboard
+                window.location.href = "home.html"; // Ganti dengan halaman tujuan yang sesuai
+            } else {
+                alert("Username atau password salah!");
+            }
+        });
+    </script>
+</body>
+</html>
